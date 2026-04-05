@@ -4,7 +4,7 @@ published: 2026-04-05T02:06:59.792Z
 description: ''
 updated: ''
 tags:
-  - Tag
+  - Astro
 draft: false
 pin: 0
 toc: true
@@ -14,9 +14,11 @@ abbrlink: ''
 
 其实部署很简单，之前一直不成功是因为顺序搞错了。
 
+> 注意⚠️：此方法只在retypeset主题测试过，其他Astro主题可能不适用
+
 ## Getting Started
 
-直接从https://github.com/radishzzz/astro-theme-retypeset模板创建仓库，名字必须用自己的用户名开头的github.io，如Dannyrojas6.github.io，创建完成后找到仓库上方的Settings，点击Pages，将Build and deployment下的source改为GitHub Actions。
+直接从`https://github.com/radishzzz/astro-theme-retypeset`模板创建仓库，名字必须用自己的用户名开头的github.io，如Dannyrojas6.github.io，创建完成后找到仓库上方的Settings，点击Pages，将Build and deployment下的source改为GitHub Actions。
 
 ## Clone Repository
 
@@ -53,7 +55,7 @@ export const themeConfig: ThemeConfig = {
   },
 ```
 
-在.github下创建workflows/deploy.yml：
+在.github下创建workflows/deploy.yml，retypeset主分支为master，修改main->master：
 
 ```yaml
 name: Deploy to GitHub Pages
@@ -103,7 +105,7 @@ jobs:
 
 ## Commit & Push
 
-将修改提交并推送到`main`分支，在仓库中Actions点击Deploy to GitHub Pages（第一次推荐手动部署一遍），完成后访问自己的网站地址即可：
+将修改提交并推送到`master`分支，在仓库中Actions点击Deploy to GitHub Pages（第一次推荐手动部署一遍），完成后访问自己的网站地址即可：
 
 ```url
 https://dannyrojas6.github.io
